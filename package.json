@@ -1,0 +1,23 @@
+{
+  "name": "portal_noticias",
+  "version": "1.0.0",
+  "description": "Site de noticias",
+  "main": "noticias.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusstudenty/NodeJS.git"
+  },
+  "author": "Matheus Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheusstudenty/NodeJS/issues"
+  },
+  "homepage": "https://github.com/matheusstudenty/NodeJS#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.3"
+  }
+}
