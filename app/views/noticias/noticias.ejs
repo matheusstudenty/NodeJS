@@ -8,5 +8,16 @@
 
 		<h1>Notícias</h1>
 
+		<table border="bold">
+			<tr>
+				<th> ID </th>
+				<th> Titulo </th>
+			</tr>
+			<% for(var i=0; i < noticias.length; i++) { %>
+			<tr>
+				<td> <%= noticias[i].id_noticia %> </td>
+				<td> <%= noticias[i].titulo %> </td>
+			</tr>
+			<% } %>
 	</body>
 </html>
