@@ -8,10 +8,10 @@ module.exports = application => {
 
         //conexao
         var connection = application.config.dbConnection();
-        var noticiasModel = application.app.models.noticiasModel;
+        var noticiasModel = new application.app.models.noticiasModel(connection);
 
         //model
-        noticiasModel.salvarNoticia(noticia, connection, (error, result) => {
+        noticiasModel.salvarNoticia(noticia, (error, result) => {
             res.redirect('/noticias');
         });
     });
