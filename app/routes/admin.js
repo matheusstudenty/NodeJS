@@ -8,7 +8,7 @@ module.exports = application => {
 
         //conexao
         var connection = application.config.dbConnection();
-        var noticiasModel = new application.app.models.noticiasModel(connection);
+        var noticiasModel = new application.app.models.NoticiasDAO(connection);
 
         //model
         noticiasModel.salvarNoticia(noticia, (error, result) => {
