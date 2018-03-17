@@ -1,10 +1,24 @@
-module.exports = application => {
+module.exports = function (application) {
     application.get('/formulario_inclusao_noticia', (req, res) => { 
         res.render("admin/form_add_noticia")
     });
 
-    application.post('/noticias/salvar', (req, res) => { 
+    application.post('/noticias/salvar', function(req, res) { 
         var noticia = req.body;
+
+        req.assert('titulo','titulo é obrigatório').notEmpty();
+        req.assert('resumo','Resumo é obrigatorio').notEmpty();
+        req.assert('resumo','Resumo deve conter entre 10 e 100 caracteres').len(10,100);
+        req.assert('autor','Autor é obrigatorio').notEmpty();
+        req.assert('data_noticia','data é obrigatorio').notEmpty()
+        req.assert('noticia','Noticia é obrigatorio').notEmpty();
+
+        var erros = req.validationErrors();
+
+        if(erros){           
+            res.render("admin/form_add_noticia", { validacao: erros });
+            return;
+        }
 
         //conexao
         var connection = application.config.dbConnection();
